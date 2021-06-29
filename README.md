@@ -5,8 +5,8 @@ This is for study group
 - URL만으로 해당 API의 내용을 추정할 수 있게 한다.
 - 용도에 맞게 Method(GET/PUT/POST/DELETE)를 사용한다.
 
-## Base  : 기본 환경 설정 및 Hello world!
-## Step1 : GET
-## Step2 : POST
-## Step3 : PUT
-## Step4 : DELETE
+### Base  : 기본 환경 설정
+### Step1 : GET
+### Step2 : POST
+### Step3 : PUT
+### Step4 : DELETE
