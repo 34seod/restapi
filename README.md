@@ -6,7 +6,7 @@ This is for study group
 - 용도에 맞게 Method(GET/PUT/POST/DELETE)를 사용한다.
 
 ## Base  : 기본 환경 설정 및 Hello world!
-## Step1 : index, show
-## Step2 : new, create
-## Step3 : edit, update
-## Step4 : delete
+## Step1 : GET
+## Step2 : POST
+## Step3 : PUT
+## Step4 : DELETE
