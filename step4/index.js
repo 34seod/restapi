@@ -1,9 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static('public'));
 
 let USERS = [
@@ -30,7 +28,7 @@ app.get('/users', function(req, res) {
 });
 
 app.get('/users/:id', function(req, res) {
-  const id = req.params.id;
+  const { id } = req.params;
   const target_user = USERS.find((user) => String(user.id) === id);
 
   sendJson(res, target_user);
@@ -45,7 +43,7 @@ app.post('/users', function(req, res) {
 });
 
 app.put('/users/:id', function(req, res) {
-  const id = req.params.id;
+  const { id } = req.params;
   const target_user = USERS.find((user) => String(user.id) === id);
   target_user.name = req.body.name;
 
@@ -53,10 +51,10 @@ app.put('/users/:id', function(req, res) {
 });
 
 app.delete('/users/:id', function(req, res) {
-  const id = req.params.id;
+  const { id } = req.params;
   USERS = USERS.filter((user) => String(user.id) !== id);
 
   sendJson(res, USERS);
 });
 
-app.listen(3001);
+app.listen(3000);

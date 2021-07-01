@@ -66,14 +66,14 @@
           resultElement.innerHTML = 'API에 접속을 실패했습니다.';
         };
         xhr.open(method, url, true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('Content-type', 'application/json');
         xhr.send(body);
       }
 
       function showBody() {
         var method = methodElement.options[methodElement.selectedIndex].value;
-        resultElement.innerHTML = ''
-        bodyElement.value = ''
+        resultElement.innerHTML = '';
+        bodyElement.value = '';
         bodyInputElement.className = (method === "POST" || method === "PUT") ? "form-floating mt-3 d-flex" : "form-floating mt-3 d-none";
       }
     </script>
