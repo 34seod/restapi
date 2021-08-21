@@ -1,6 +1,8 @@
 const express = require('express');
+var cors = require('cors');
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -42,6 +44,12 @@ app.post('/users', function(req, res) {
   sendJson(res, new_user);
 });
 
+app.post('/test', function(req, res) {
+  // console.log(req);
+  console.log("test------");
+  sendJson(res, 0);
+});
+
 app.put('/users/:id', function(req, res) {
   const { id } = req.params;
   const target_user = USERS.find((user) => String(user.id) === id);
@@ -57,4 +65,4 @@ app.delete('/users/:id', function(req, res) {
   sendJson(res, USERS);
 });
 
-app.listen(3000);
+app.listen(3001);
